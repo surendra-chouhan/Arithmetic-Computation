@@ -29,8 +29,8 @@ done
 echo "Results of all the computation are : " ${Result_Values[@]}
 
 
-echo "Computation Result in the Descending Order is : "
+echo "Computation Result in the Ascending Order is : "
 for k in ${!Computation[@]}
 do
 	echo $k ":" ${Computation[$k]}
-done | sort -nr -k3
+done | sort -n -k3
