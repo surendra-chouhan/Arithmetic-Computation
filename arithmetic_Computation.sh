@@ -10,3 +10,6 @@ echo $Query1
 
 Query2=`echo - | awk '{printf "%.2f\n", '$a*$b+$c'}'`
 echo $Query2
+
+Query3=`echo - | awk '{printf "%.2f\n", '$c+$a/$b'}'`
+echo $Query3
