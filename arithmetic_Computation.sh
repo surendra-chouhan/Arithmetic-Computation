@@ -6,16 +6,16 @@ read -p "Enter 3 numbers : " a b c;
 echo $a $b $c
 
 Query1=`echo - | awk '{printf "%.2f\n", '$a+$b*$c'}'`
-#echo $Query1
+echo $Query1
 
 Query2=`echo - | awk '{printf "%.2f\n", '$a*$b+$c'}'`
-#echo $Query2
+echo $Query2
 
 Query3=`echo - | awk '{printf "%.2f\n", '$c+$a/$b'}'`
-#echo $Query3
+echo $Query3
 
 Query4=`echo - | awk '{printf "%.2f\n", '$a%$b+$c'}'`
-#echo $Query4
+echo $Query4
 
 declare -A Computation
 Computation[a+b*c]=$Query1
@@ -28,3 +28,11 @@ for k in ${!Computation[@]}
 do
 	echo $k " : " ${Computation[$k]}
 done
+
+counter=1
+for i in ${!Computation[@]}
+do
+	Result_Values[counter++]=${Computation[$i]}
+done
+
+echo ${Result_Values[@]}
